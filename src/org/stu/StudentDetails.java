@@ -18,5 +18,8 @@ public class StudentDetails {
 		int a = 10;
 		int b = 20;
 		System.out.println(a + b);
+		int c = 5;
+		int d = 10;
+		System.out.println(d-c);
 	}
 }
