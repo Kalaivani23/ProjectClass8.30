@@ -15,5 +15,8 @@ public class StudentDetails {
 		k.kalai();
 		System.out.println("Kalaivani");
 		System.out.println("End");
+		int a = 10;
+		int b = 20;
+		System.out.println(a + b);
 	}
 }
