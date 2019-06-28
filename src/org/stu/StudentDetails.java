@@ -13,5 +13,8 @@ public class StudentDetails {
 		s.stuId();
 		KalaiVani k = new KalaiVani();
 		k.kalai();
+		int a = 10;
+		int b = 20;
+		System.out.println(a + b);
 	}
 }
