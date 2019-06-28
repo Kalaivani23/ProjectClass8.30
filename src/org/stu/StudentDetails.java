@@ -13,5 +13,7 @@ public class StudentDetails {
 		s.stuId();
 		KalaiVani k = new KalaiVani();
 		k.kalai();
+		System.out.println("Kalaivani");
+		System.out.println("End");
 	}
 }
