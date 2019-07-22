@@ -1,0 +1,7 @@
+@tag
+Feature: Launch
+  @tag1
+  Scenario: Launch facebook
+    Given Launch browser
+    When Send key
+    Then Close browser

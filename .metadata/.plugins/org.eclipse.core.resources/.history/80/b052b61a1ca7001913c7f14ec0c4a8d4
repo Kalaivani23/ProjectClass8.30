@@ -1,0 +1,7 @@
+@tag
+Feature: Launch
+  @tag1
+  Scenario: Launch facebook
+    Given Launch browser
+    When User log in
+    Then Close browser

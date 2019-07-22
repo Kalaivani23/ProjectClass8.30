@@ -1,0 +1,27 @@
+/* QUESTION 6
+----------
+URL : http://www.greenstechnologys.com/testimonial.html 
+
+NOTE: Print Sekhar C (Infosys, Chennai) statement.
+ */
+
+package org.day4;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Ques6 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium_Ques\\Selenium_Assignment\\src\\driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://www.greenstechnologys.com/testimonial.html");
+		WebElement txt = driver.findElement(By.xpath("//div[@id = 'article-wrapper']"));
+		if(txt.getText().equals("Sekhar C"))
+		{
+		System.out.println(txt.getText());
+		}
+}
+}

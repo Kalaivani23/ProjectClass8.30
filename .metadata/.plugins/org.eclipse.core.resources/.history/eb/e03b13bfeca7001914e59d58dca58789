@@ -1,0 +1,91 @@
+package org.maven.project.Selenium_Cucumber;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LocatorClass extends Base{
+	WebDriver driver = new ChromeDriver();
+	public LocatorClass() {
+		PageFactory.initElements(driver, this);
+	}
+	@FindBy(id="username")
+	private WebElement txtId;
+
+	@FindBy(id="password")
+	private WebElement txtPwd;
+	
+	@FindBy(id="login")
+	private WebElement btnLogin;
+	
+	@FindBy(id="location")
+	private WebElement dropDownLocation;
+	
+	@FindBy(id="hotels")
+	private WebElement dropDownHotel;
+	
+	@FindBy(id="RoomType")
+	private WebElement dropDownRoomType;
+	
+	@FindBy(id="room_nos")
+	private WebElement dropDownRoomNo;
+	
+	@FindBy(id="datepick_in")
+	private WebElement txtDatePickIn;
+	
+	@FindBy(id="datepick_out")
+	private WebElement txtDatePickOut;
+	
+	@FindBy(id="adult_room")
+	private WebElement dropDownAdultRoom;
+	
+	@FindBy(id="child_room")
+	private WebElement dropDownChildRoom;
+
+	public WebElement getDropDownLocation() {
+		return dropDownLocation;
+	}
+
+	public WebElement getDropDownHotel() {
+		return dropDownHotel;
+	}
+
+	public WebElement getDropDownRoomType() {
+		return dropDownRoomType;
+	}
+
+	public WebElement getDropDownRoomNo() {
+		return dropDownRoomNo;
+	}
+
+	public WebElement getTxtDatePickIn() {
+		return txtDatePickIn;
+	}
+
+	public WebElement getTxtDatePickOut() {
+		return txtDatePickOut;
+	}
+
+	public WebElement getDropDownAdultRoom() {
+		return dropDownAdultRoom;
+	}
+
+	public WebElement getDropDownChildRoom() {
+		return dropDownChildRoom;
+	}
+
+	public WebElement getTxtId() {
+		return txtId;
+	}
+
+	public WebElement getTxtPwd() {
+		return txtPwd;
+	}
+
+	public WebElement getBtnLogin() {
+		return btnLogin;
+	}	
+	
+}

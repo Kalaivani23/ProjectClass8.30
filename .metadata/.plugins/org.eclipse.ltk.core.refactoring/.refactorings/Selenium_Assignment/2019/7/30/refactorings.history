@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy source folder &apos;commons-io-2.4.jar&apos; to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;Selenium_Assignment&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original element: &apos;Selenium_Assignment/src/screenShot_jar/commons-io-2.4.jar&apos;" description="Copy source folder" element1="/src\/screenShot_jar\/commons-io-2.4.jar" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="1" stamp="1563706925626" target="/Selenium_Cucumber/lib" version="1.0"/>
+</session>

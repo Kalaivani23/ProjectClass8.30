@@ -1,0 +1,34 @@
+package org.maven.project.Selenium_Cucumber;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import cucumber.api.java.Before;
+
+
+public class Base {
+	static Select sel;
+	static WebDriver driver;
+	
+	public static void Launch() {
+		
+			System.setProperty("webdriver.chrome.driver", "D:\\Selenium_Ques\\Selenium_Assignment\\src\\driver\\chromedriver.exe");
+			driver = new ChromeDriver();
+			driver.get("http://adactin.com/HotelApp/index.php");
+	}
+		
+		public static void click(WebElement c) {
+			c.click();
+		}
+		public static void type(WebElement e, String s)
+		{
+			e.sendKeys(s);
+		}
+		public static void dropDown(WebElement e, String s)
+		{
+			sel = new Select(e);
+			sel.selectByVisibleText(s);
+		}
+	}

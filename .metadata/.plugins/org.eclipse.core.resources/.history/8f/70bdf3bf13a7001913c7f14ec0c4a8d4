@@ -1,0 +1,5 @@
+@tag
+Feature: Launch
+  @tag1
+  Scenario: Launch facebook
+    Given Launch fb

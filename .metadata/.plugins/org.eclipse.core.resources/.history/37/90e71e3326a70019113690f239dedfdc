@@ -1,0 +1,73 @@
+package org.maven.project.Selenium_Cucumber;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Base {
+
+	WebDriver driver;
+	
+	@Before
+	public void launch_browser() {
+		System.setProperty("webdriver.chrome.driver","D:\\Selenium_Ques\\Selenium_Assignment\\src\\driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://adactin.com/HotelApp/");
+	}
+
+	@Given("^User Performs Login in adactin application$")
+	public void user_Performs_Login_in_adactin_application()  {
+		driver.findElement(By.id("username")).sendKeys("Chandan2011");
+		driver.findElement(By.id("password")).sendKeys("chandan@20");
+		driver.findElement(By.id("login")).click();
+
+	}
+
+	@Given("^User searches for the hotel$")
+	public void user_searches_for_the_hotel()  {
+
+
+	}
+
+	@When("^User validates and select the required hotel$")
+	public void user_validates_and_select_the_required_hotel()  {
+
+
+	}
+
+	@When("^User does hotel booking by giving required inputs$")
+	public void user_does_hotel_booking_by_giving_required_inputs()  {
+
+
+	}
+
+	@When("^User navigate to booking confirmation page$")
+	public void user_navigate_to_booking_confirmation_page()  {
+
+
+	}
+
+	@When("^User selects my itinery$")
+	public void user_selects_my_itinery()  {
+
+
+	}
+
+	@Then("^User cancels the booking$")
+	public void user_cancels_the_booking()  {
+	 
+	}
+
+
+	@After
+	public void close_browser() {
+		driver.close();
+	}
+
+}

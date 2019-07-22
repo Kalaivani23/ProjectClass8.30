@@ -1,0 +1,112 @@
+package org.maven.project.Selenium_Cucumber;
+
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Base {
+
+	WebDriver driver;
+	WebElement common;
+	Select data;
+	String loc,hotel,roomType,rooms,checkInDate,checkOutDate;
+	@Before
+	public void launch_browser() {
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\Selenium_Ques\\Selenium_Assignment\\src\\driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://adactin.com/HotelApp/");
+	}
+
+	@Given("^User Performs Login in adactin application$")
+	public void user_Performs_Login_in_adactin_application(DataTable loginDetails) {
+		List<Map<String, String>> values = loginDetails.asMaps(String.class, String.class);
+		driver.findElement(By.id("username")).sendKeys(values.get(0).get("UserName"));
+		driver.findElement(By.id("password")).sendKeys(values.get(0).get("Password"));
+		driver.findElement(By.id("login")).click();
+
+	}
+	@Given("^User searches for the hotel$")
+	public void user_searches_for_the_hotel(DataTable search) {
+	    Map<String, String> values = search.asMap(String.class, String.class);
+	    common = driver.findElement(By.id("location"));
+		data = new Select(common);
+		data.selectByVisibleText(values.get("Location"));
+		common = driver.findElement(By.id("hotels"));
+		data = new Select(common);
+		data.selectByVisibleText(values.get("Hotels"));
+		common = driver.findElement(By.id("room_type"));
+		data = new Select(common);
+		data.selectByVisibleText(values.get("RoomType"));
+		common = driver.findElement(By.id("room_nos"));
+		data = new Select(common);
+		data.selectByVisibleText(values.get("NumberOfRooms"));
+		common =  driver.findElement(By.id("datepick_in"));
+		common.clear();
+		common.sendKeys(values.get("Datepick_in"));
+		common = driver.findElement(By.id("datepick_out"));
+		common.clear();
+		common.sendKeys(values.get("Datepick_out"));
+		common = driver.findElement(By.id("adult_room"));
+		data = new Select(common);
+		data.selectByVisibleText(values.get("Adults_Per_Room"));
+		common = driver.findElement(By.id("child_room"));
+		data = new Select(common);
+		data.selectByVisibleText(values.get("Children_Per_Room"));
+		driver.findElement(By.id("Submit")).click();
+	}
+
+
+
+		@When("^User validates and select the required hotel$")
+	public void user_validates_and_select_the_required_hotel(DataTable search) {
+			Map<String, String> values = search.asMap(String.class, String.class);
+			common = driver.findElement(By.xpath("(//input[@type='text'])[1]"));
+			loc = common.getAttribute("values");
+			if(values.get("location").equals(loc))
+			{
+				System.out.println("correct");
+			}
+			else
+				System.out.println("failed");
+			
+	}
+
+	@When("^User does hotel booking by giving required inputs$")
+	public void user_does_hotel_booking_by_giving_required_inputs() {
+
+	}
+
+	@When("^User navigate to booking confirmation page$")
+	public void user_navigate_to_booking_confirmation_page() {
+
+	}
+
+	@When("^User selects my itinery$")
+	public void user_selects_my_itinery() {
+
+	}
+
+	@Then("^User cancels the booking$")
+	public void user_cancels_the_booking() {
+
+	}
+
+	@After
+	public void close_browser() {
+		driver.close();
+	}
+
+}

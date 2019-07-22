@@ -1,0 +1,22 @@
+@tag
+Feature: Working on adactine application
+
+  @tag1
+  Scenario: Using all the operation on application
+    Given User Performs Login in adactin application
+      | UserName    | Password   |
+      | Chandan2011 | chandan@20 |
+    And User searches for the hotel
+      | Location          | London      |
+      | Hotels            | Hotel Creek |
+      | RoomType          | Double      |
+      | NumberOfRooms     | 2 - Two     |
+      | Datepick_in       | date1       |
+      | Datepick_out      | date2       |
+      | Adults_Per_Room   | 3 - Three   |
+      | Children_Per_Room | 1 - One     |
+    When User validates and select the required hotel
+    And User does hotel booking by giving required inputs
+    And User navigate to booking confirmation page
+    And User selects my itinery
+    Then User cancels the booking
